@@ -1,0 +1,138 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$arrow-bottom-name: 'arrow-bottom'
+$arrow-bottom-x: 130px
+$arrow-bottom-y: 39px
+$arrow-bottom-offset-x: -130px
+$arrow-bottom-offset-y: -39px
+$arrow-bottom-width: 13px
+$arrow-bottom-height: 8px
+$arrow-bottom-total-width: 159px
+$arrow-bottom-total-height: 96px
+$arrow-bottom-image: 'sprite.png'
+$arrow-bottom: (130px, 39px, -130px, -39px, 13px, 8px, 159px, 96px, 'sprite.png', 'arrow-bottom', )
+$menu-mobile-name: 'menu-mobile'
+$menu-mobile-x: 130px
+$menu-mobile-y: 0px
+$menu-mobile-offset-x: -130px
+$menu-mobile-offset-y: 0px
+$menu-mobile-width: 29px
+$menu-mobile-height: 29px
+$menu-mobile-total-width: 159px
+$menu-mobile-total-height: 96px
+$menu-mobile-image: 'sprite.png'
+$menu-mobile: (130px, 0px, -130px, 0px, 29px, 29px, 159px, 96px, 'sprite.png', 'menu-mobile', )
+$comodo-name: 'comodo'
+$comodo-x: 0px
+$comodo-y: 0px
+$comodo-offset-x: 0px
+$comodo-offset-y: 0px
+$comodo-width: 67px
+$comodo-height: 43px
+$comodo-total-width: 159px
+$comodo-total-height: 96px
+$comodo-image: 'sprite.png'
+$comodo: (0px, 0px, 0px, 0px, 67px, 43px, 159px, 96px, 'sprite.png', 'comodo', )
+$csfa-name: 'csfa'
+$csfa-x: 77px
+$csfa-y: 0px
+$csfa-offset-x: -77px
+$csfa-offset-y: 0px
+$csfa-width: 43px
+$csfa-height: 43px
+$csfa-total-width: 159px
+$csfa-total-height: 96px
+$csfa-image: 'sprite.png'
+$csfa: (77px, 0px, -77px, 0px, 43px, 43px, 159px, 96px, 'sprite.png', 'csfa', )
+$fisca-name: 'fisca'
+$fisca-x: 53px
+$fisca-y: 53px
+$fisca-offset-x: -53px
+$fisca-offset-y: -53px
+$fisca-width: 53px
+$fisca-height: 28px
+$fisca-total-width: 159px
+$fisca-total-height: 96px
+$fisca-image: 'sprite.png'
+$fisca: (53px, 53px, -53px, -53px, 53px, 28px, 159px, 96px, 'sprite.png', 'fisca', )
+$ola-name: 'ola'
+$ola-x: 0px
+$ola-y: 53px
+$ola-offset-x: 0px
+$ola-offset-y: -53px
+$ola-width: 43px
+$ola-height: 43px
+$ola-total-width: 159px
+$ola-total-height: 96px
+$ola-image: 'sprite.png'
+$ola: (0px, 53px, 0px, -53px, 43px, 43px, 159px, 96px, 'sprite.png', 'ola', )
+$spritesheet-width: 159px
+$spritesheet-height: 96px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: ($arrow-bottom, $menu-mobile, $comodo, $csfa, $fisca, $ola, )
+$spritesheet: (159px, 96px, 'sprite.png', $spritesheet-sprites, )
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+    // CSS
+    .icon {
+      display: inline-block;
+    }
+
+    // HTML
+    <i class="icon icon-home"></i>
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

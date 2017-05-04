@@ -1,0 +1,174 @@
+@import mixins
+@import vars
+@import ../css/sprite
+
+.main-slide
+  .form-wrap
+    padding: 0 15px
+  display: block
+  clear: both
+  padding: 55px 0
+  +jpg(header-bg)
+  min-width: 320px
+  +cover
+  .media
+    color: white
+    +m(992)
+      max-width: 530px
+      width: 100%
+      margin: 0 auto
+      text-align: center
+    .section-title
+      h3.heading
+        font-size: 6rem
+        color: #fff
+        +capitalize
+        margin-bottom: 0
+      p.excerpt
+        font-size: 2.6rem
+        font-family: $fira
+    .media-body
+      .excerpt
+        font-size: 12px
+        padding: 18px
+        background: rgba(229,229,229, .2)
+      ul
+        width: 100%
+        overflow: auto
+        padding-top: 20px
+        padding-bottom: 20px
+        li
+          padding: 5px 0
+          width: 50%
+          float: left
+          font-family: $fira
+          font-size: 16px
+          text-align: left
+          +m(480)
+            width: 100%
+          img
+            margin-right: 8px
+  .icon
+    display: inline-block
+    margin-right: 10px
+    margin-top: 30px
+    +m(992)
+      display: none!important
+  .icon-comodo
+    +icon(67)
+    width: 67px
+    height: 43px
+    padding: 0
+    background: transparent
+    &::after
+      left: 0
+      top: 0
+      background: transperent
+      @include sprite($comodo)
+  .icon-fisca
+    +icon(67)
+    width: 53px
+    height: 28px
+    padding: 0
+    background: transparent
+    &::after
+      left: 0
+      top: 0
+      background: transperent
+      @include sprite($fisca)
+  .icon-csfa
+    +icon(67)
+    width: 53px
+    height: 28px
+    padding: 0
+    bottom: 12px
+    background: transparent
+    &::after
+      left: 0
+      top: 0
+      background: transperent
+      @include sprite($csfa)
+  .icon-ola
+    +icon(67)
+    width: 53px
+    height: 28px
+    padding: 0
+    bottom: 12px
+    background: transparent
+    &::after
+      left: 0
+      top: 0
+      background: transperent
+      @include sprite($ola)
+  .center-align
+    text-align: center
+    display: none
+    +m(992)
+      display: block
+  .icon-wrapper
+    display: inline-block
+    padding-top: 20px
+    margin: 0 auto
+
+  form
+    ::-webkit-input-placeholder
+      color: #000
+      font-size: 1.6rem
+    +jpg(dollar)
+    +cover
+    +br(4px)
+    +m(992)
+      margin-right: 15px
+    width: 460px
+    padding: 36px 40px
+    +m(480)
+      padding: 20px
+    float: right
+    +m(992)
+      float: none
+      max-width: 500px
+      width: 100%
+      margin: 0 auto
+      margin-top: 40px
+    h4.heading
+      color: #263238
+      font-size: 3rem
+      font-family: $firaBold
+      margin-bottom: 25px
+    select, input
+      width: 100%
+      padding: 12px 15px
+      background: #fff
+      +br(4px)
+      font-size: 1.6rem
+      border: none
+    select
+      margin-bottom: 10px
+      padding-right: 25px;
+      -webkit-appearance: none;
+    .select-wrap
+      position: relative
+      padding: 0
+      &::after
+        content: ""
+        display: block
+        +absolute
+        width: 13px
+        height: 8px
+        top: 20px
+        right: 15px
+        @include sprite($arrow-bottom)
+    input
+      margin-bottom: 20px
+    button
+      width: 100%
+      +br(4px)
+      outline: none
+      border: none
+      margin-bottom: 10px
+      position: relative
+      &:active
+        top: 1px
+p.info
+  font-size: 1.2rem
+  color: #000

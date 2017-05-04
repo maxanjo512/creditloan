@@ -1,0 +1,212 @@
+@import mixins
+@import vars
+@import ../css/sprite
+body
+  color: #000
+  font-family: Arial, sans-serif
+  font-size: 16px
+
+a
+  font-family: Arial, sans-serif
+  color: #757575
+  text-decoration: none
+  font-size: 12px
+  &:hover
+    text-decoration: underline
+
+.content
+  width: 1170px
+  margin: 0 auto
+.container
+  position: relative
+  min-height: 100%
+  width: 1170px
+  min-width: 320px
+  +m(1170)
+    width: 100%
+  padding: 0px
+  +m(320)
+    padding: 0 20px
+
+.section-title
+  h3.heading
+    color: #263238
+    margin-bottom: 15px
+    margin-top: 0
+    font-family: $firaBold
+  h4.heading
+    color: #000
+.button
+  background: $second
+  color: white
+  +uppercase
+  padding: 15px 0
+  font-size: 16px
+  font-family: $firaBold
+.button.red 
+  background: $second
+.button.main
+  background: $main
+
+header
+  .container
+    padding: 0 15px
+  min-width: 320px
+  nav.header
+    height: 42px
+    text-align: center
+    background: $main
+    ul
+      float: right
+      margin-top: 9px
+      +m(367)
+        float: none
+        display: inline-block
+      li
+        list-style: none
+        float: left
+        padding:  0 10px
+        +m(367)
+          padding: 0 5px
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+        a
+          +no-decor
+          font-size: 13px
+          font-family: Arial
+          color: #e5e5e5
+          +m(367)
+            font-size: 12px
+          &:hover
+            text-decoration: underline
+
+menu.main
+  height: 60px
+  padding-top: 18px
+  .bar-mobile
+    display: none
+    margin-right: 15px
+    +m(800)
+      display: block
+      float: right
+      +pointer
+      height: 30px
+      width: 30px
+      @include sprite($menu-mobile)
+  nav.menu-mobile
+    +absolute
+    z-index: 10
+    top: 60px
+    width: 100%
+    display: none
+    +mm(800)
+      display: none!important
+    clear: both
+    padding: 0 23px 0
+    text-align: center
+    background: #fff!important
+    a
+      +capitalize
+      font-family: $firaBold
+      color: #000
+      font-size: 14px
+      display: block
+      padding: 6px 0
+      transition: .3s ease color
+      +no-decor
+      &:hover
+        color: $second
+  .logo
+    position: relative
+    bottom: 4px
+    sup
+      font-size: 24px
+    float: left
+    margin-left: 15px
+    +uppercase
+    font-size: 24px!important
+    +m(320)
+      font-size: 20px
+    font-family: $fira
+    color: #000
+    +no-decor
+    display: inline-block
+    img
+      margin-right: 8px
+      position: relative
+      bottom: 5px
+    strong
+      font-family: $firaBold
+  nav.main
+    +m(800)
+      display: none
+    +m(1100)
+      height: 42px
+    float: right
+    padding-right: 15px
+    ul
+      li
+        float: left
+        padding: 0 15px
+        +m(1100)
+          padding: 0 7px
+        &:hover .submenu
+          color: red
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+        a
+          position: relative
+          +capitalize
+          color: #000
+          +no-decor
+          transition: .3s color ease
+          font-size: 16px
+          +m(1100)
+            height: 42px!important
+            font-size: 14px
+          font-family: $firaBold
+          display: inline-block
+          height: 44px
+      li.active a
+        color: $second
+        border-bottom: 2px solid $second
+.submenu
+  width: 100%
+  padding: 28px 0
+  background: #f5f5f5
+  overflow: auto
+  +absolute
+  top: 102px
+  z-index: 1000
+  +hidden
+  opacity: 0
+  transition: .3s ease all
+  +m(800)
+    display: none!important
+  .align-c
+    display: block
+    width: 650px!important
+    margin: 0 auto!important
+  h4.heading
+    margin-bottom: 10px
+    display: block
+    +uppercase
+    font-size: 1.4rem
+    color: #000
+    font-family: $firaBold
+  .category
+    float: left
+    width: 200px
+    &:nth-child(2)
+      width: 250px
+    a
+      color: #000
+      font-family: Arial, sans-serif
+      font-size: 1.4rem
+      +capitalize
+      padding: 3px 0
+      display: block

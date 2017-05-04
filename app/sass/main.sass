@@ -1,0 +1,135 @@
+@import mixins
+@import media
+@import bar-mobile
+@import vars
+@import ../css/sprite
+@import header
+@import main-slide
+@import tabs
+
+h1, h2, h3, h4, h5, h6
+  font-family: $firaBold
+  color: #263238
+h2
+  font-size: 3.2rem
+h3
+  font-size: 2.8rem
+h4
+  font-size: 2.4rem
+h5
+  font-size: 2rem
+h6
+  font-size: 1.6rem
+
+table
+  th
+    padding: 20px
+    border: 1px solid #eee
+    background: #eee
+    font-family: $firaBold
+    font-size: 1.5rem
+    border-right: 1px solid #fff
+    &:last-child
+      border-right: 1px solid #eee
+  td
+    padding: 15px 20px
+    border: 1px solid #eee
+
+
+section.content-long
+  article
+    padding-left: 30px
+    +m(768)
+      padding-left: 15px
+    float: right
+    img
+      float: right
+      margin: 30px
+      +m(480)
+        float: none
+        display: block
+        margin: 0 auto
+        margin-bottom: 15px
+        margin-top: 20px
+    .process
+      margin-bottom: 35px
+      h3.heading
+        margin-top: 60px
+    h3.heading
+      +capitalize
+      color: #263238
+      font-size: 3.2rem
+      margin-bottom: 15px
+      margin-top: 0
+    .getloan
+      .video-content
+        float: left
+        margin: 25px
+        margin-left: 0
+        margin-bottom: 0
+        width: 55%
+        margin-top: 0
+        +m(992)
+          width: 100%
+          margin-bottom: 35px
+        iframe
+          width: 100%
+
+      i
+        font-size: 14px
+        display: block
+        margin-bottom: 14px
+        margin-top: 14px
+      p.info 
+        float: left
+        padding: 0
+        width: 66%
+        +m(380)
+          width: 100%
+        padding-right: 10px
+      a.button
+        width: 34%
+        +m(380)
+          width: 100%
+        float: right
+        text-align: center
+        &:hover
+          +no-decor
+          color: white
+          +pointer
+      .text
+        float: right
+      h3.heading
+        font-size: 2.8rem
+
+section.table-header
+  margin-top: 40px
+  .table-example
+    padding-left: 0
+  h1,h2,h3,h4,h5,h6
+    display: inline-block
+    width: (93%/6)
+    padding: 0
+  .headers-h
+    position: relative
+    right: 15px
+  table
+    width: 100%
+  
+  li
+    list-style: disc!important
+
+    
+
+
+
+  aside
+    float: left
+    +m(768)
+      clear: both
+
+
+
+
+
+

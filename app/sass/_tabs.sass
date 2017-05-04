@@ -1,0 +1,37 @@
+@import mixins
+@import vars
+
+section.questions
+  clear: both
+  padding-top: 55px
+  ul.tabs
+    margin: 0px
+    padding: 0px
+    list-style: none
+    display: block
+  ul.tabs li
+    background: #eeeeee
+    color: #000
+    display: inline-block
+    padding: 10px 0
+    font-size: 1.4rem
+    font-family: $fira
+    width: 24%
+    +m(880)
+      width: 49%
+    text-align: center
+    +box
+    cursor: pointer
+    +br(2px)
+    .hr
+      margin: 0
+      border-top: 1px solid #000
+  ul.tabs li.current
+    background: $main
+    color: #fff
+  .tab-content
+    margin-top: 15px
+    display: none
+    background: #fff    
+  .tab-content.current
+    display: inherit
