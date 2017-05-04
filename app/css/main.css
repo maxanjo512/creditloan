@@ -862,11 +862,15 @@ section.table-header {
     padding-left: 0; }
   section.table-header h1, section.table-header h2, section.table-header h3, section.table-header h4, section.table-header h5, section.table-header h6 {
     display: inline-block;
-    width: 15.5%;
+    width: 45px;
     padding: 0; }
   section.table-header .headers-h {
     position: relative;
     right: 15px; }
+    @media only screen and (max-width: 480px) {
+      section.table-header .headers-h {
+        width: 100%;
+        text-align: center; } }
   section.table-header table {
     width: 100%; }
   section.table-header li {
